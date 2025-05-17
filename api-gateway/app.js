@@ -7,13 +7,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Service URLs
-const locationServiceUrl = 'http://localhost:3001';
-const weatherServiceUrl = 'http://localhost:3002';
-const forecastServiceUrl = 'http://localhost:3003';
-const paymentServiceUrl = 'http://localhost:3004'; // ✅ Payment service
+// ✅ Deployed Service URLs on Render
+const locationServiceUrl = 'https://location-service-4dsf.onrender.com';
+const weatherServiceUrl = 'https://weather-service-hngb.onrender.com';
+const forecastServiceUrl = 'https://forecast-services.onrender.com';
+const paymentServiceUrl = 'https://payment-service-bijq.onrender.com';
 
-// Location
+// 🌍 Location
 app.get('/location', async (req, res) => {
   try {
     const response = await axios.get(`${locationServiceUrl}/location`, { params: req.query });
@@ -23,7 +23,7 @@ app.get('/location', async (req, res) => {
   }
 });
 
-// Weather
+// 🌤️ Weather
 app.get('/weather', async (req, res) => {
   try {
     const response = await axios.get(`${weatherServiceUrl}/weather`, { params: req.query });
@@ -33,7 +33,7 @@ app.get('/weather', async (req, res) => {
   }
 });
 
-// Forecast
+// 📈 Forecast
 app.get('/forecast', async (req, res) => {
   try {
     const response = await axios.get(`${forecastServiceUrl}/forecast`, { params: req.query });
@@ -43,7 +43,7 @@ app.get('/forecast', async (req, res) => {
   }
 });
 
-// ✅ Payment forwarding
+// 💳 Payment
 app.post('/pay', async (req, res) => {
   try {
     const response = await axios.post(`${paymentServiceUrl}/pay`, req.body);
@@ -53,5 +53,8 @@ app.post('/pay', async (req, res) => {
   }
 });
 
-// Start gateway
-app.listen(3000, () => console.log('🛡️ API Gateway running on http://localhost:3000'));
+// 🚀 Start API Gateway
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🛡️ API Gateway running on http://localhost:${PORT}`);
+});
