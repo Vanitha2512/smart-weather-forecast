@@ -24,3 +24,4 @@ app.get('/forecast', (req, res) => {
 });
 
 app.listen(3003, () => console.log('📈 Forecast Service running on http://localhost:3003'));
+
