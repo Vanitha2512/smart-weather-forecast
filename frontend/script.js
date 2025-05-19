@@ -1,4 +1,4 @@
-const apiGatewayUrl = 'https://api-gateway-95yt.onrender.com';
+const apiGatewayUrl = 'http://localhost:3000';
 const openWeatherApiKey = '243eb7f11f1cb24b9bb062aa813a01f9'; // Replace if needed
 
 // 🔍 Autocomplete City Names
@@ -93,3 +93,4 @@ document.getElementById('paymentForm').addEventListener('submit', async (e) => {
     paymentResult.innerHTML = `<span class="error">${error.message}</span>`;
   }
 });
+
