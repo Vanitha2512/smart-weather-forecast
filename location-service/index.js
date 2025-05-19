@@ -14,3 +14,4 @@ app.get('/location', (req, res) => {
 });
 
 app.listen(3001, () => console.log("📍 Location Service running on http://localhost:3001"));
+
