@@ -44,3 +44,4 @@ app.get('/weather', async (req, res) => {
 app.listen(3002, () => {
   console.log("☁️ Weather Service running on http://localhost:3002");
 });
+
